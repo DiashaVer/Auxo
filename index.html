@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8"> <!-- Установка кодировки документа -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Адаптация под мобильные устройства -->
+    <title>Fashion Fusion</title> <!-- Заголовок страницы -->
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение внешнего файла стилей CSS -->
+
+    <script>
+        function searchCatalog() {
+            const searchQuery = document.getElementById('search-input').value.toLowerCase();
+            // Здесь можно добавить логику для определения нужной страницы
+            let targetPage = '';
+
+            // Пример: простая логика для определения страницы на основе запроса
+            if (searchQuery.includes('jeans')) {
+                targetPage = '/jeans.html';
+            } else if (searchQuery.includes('skirts')) {
+                targetPage = '/skirts.html';
+            } else if (searchQuery.includes('dresses')) {
+                targetPage = '/dresses.html';
+            } else {
+                alert('Товар не найден. Пожалуйста, попробуйте снова.');
+                return;
+            }
+
+            // Переход на целевую страницу
+            window.location.href = targetPage;
+        }
+ 
+    </script>
+
+</head>
+
+<body>
+    <table style="border: 2px solid #90938e; border-collapse: collapse; width: 100%;">
+        <thead>
+                <th><h2>Fashion Fusion</h2></th>
+                
+                <th><a href="/cart.html">Cart</a></th>
+                
+        </thead>
+        <tbody> 
+            <tr>
+                <td style="border: 1px solid #90938e; padding-left: 10%;">
+                    <h3 style="text-align: left;">
+                        <span>Catalog</span>
+                    </h3>
+                    <div>
+                        <ul style="text-align: center;">
+                            <li style="max-width: min-content;"><a href="/jeans.html">Jeans</a></li>
+                            <li style="max-width: min-content;"><a href="/skirts.html">Skirts</a></li>
+                            <li style="max-width: min-content;"><a href="/dresses.html">Dresses</a></li>
+                        </ul>
+                    </div>
+                </td>
+              
+                <td style="border: 1px solid #90938e;">
+                    <h3 style="text-align: center;">
+                        <span>Filter:</span>
+                    </h3>
+
+                    <div>
+                        <span>Search:</span>
+                        <div style="display: flex; align-items: center;"> <!-- Flexbox для выравнивания -->
+                        <input id="search-input" placeholder="Enter product name" type="text">
+                        <button onclick="searchCatalog()">Search</button> <!-- Кнопка поиска -->
+                    </div>
+
+                    <div>
+                        <span>Title:</span>
+                        <input placeholder="enter title" type="text"> 
+                    </div>
+
+                    <div>
+                        <span>Size:</span>
+                        <input  placeholder="enter size" type="number"> 
+                    </div>
+
+                    <div>
+                        <span>Free delivery:</span>
+                        <input placeholder="enter title" type="checkbox"> 
+                    </div>
+
+                    <div>
+                        <span>Delivery type:</span>
+                        <input type="radio" name="delivery" value="courier" title="courier" id="delivery-courier"> 
+                        <label for="delivery-courier">courier</label>
+                        <input type="radio" name="delivery" value="pickup" title="pickup" id="delivery-pick-up">
+                        <label for="delivery-pickup">pickup</label>
+                        <input type="radio" name="delivery" value="pick-up post" title="pickup point" id="delivery-post">
+                        <label for="delivery-pick-up point">post</label>
+
+                    </div>
+                </td> 
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;">WELCOME</td> 
+            </tr>
+        </tbody> 
+    </table>
+</body>
+</html>
